@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominoes
 {
-    public abstract class Train
+    public abstract class Train : IEnumerable<Domino>
     {
         protected List<Domino> dominoes;
         protected int engineValue;
@@ -87,12 +87,12 @@ namespace Dominoes
         public abstract IsPlayable(Hand h, Domino d, out bool mustFlip);
         protected bool IsPlayable(Domino d, out bool mustFlip)
         {
-            if ()
+            if (PlayableValue == d.Side1)
             {
                 mustFlip = false;
                 return true;
             }
-            else if ()
+            else if (PlayableValue == d.Side2)
             {
                 mustFlip= true;
                 return true;
@@ -129,5 +129,6 @@ namespace Dominoes
             output += "\n";
             return output;
         }
+        public abstract ForEach(Hand h);
     }
 }

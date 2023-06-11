@@ -10,7 +10,7 @@ namespace Dominoes
     /// This class represents an individual domino
     /// </summary>
     [Serializable()]
-    public class Domino
+    public class Domino : IComparable<Domino>
     {
         private int side1;
         private int side2;
